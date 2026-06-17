@@ -1,2 +1,19 @@
-.venv
+# Ignore python environment and OS files
+.venv/
+__pycache__/
+*.pyc
 .DS_Store
+
+# Ignore model weights (Keep repo light)
+*.pth
+
+# Ignore all images inside training and test sets across any subfolder
+**/dataset/training_set/**/*
+**/dataset/test_set/**/*
+
+# BUT do not ignore .gitkeep files so empty directories are tracked in GitHub
+!**/dataset/training_set/**/.gitkeep
+!**/dataset/test_set/**/.gitkeep
+
+# Ensure single prediction images are ALWAYS tracked and never ignored
+!**/dataset/single_prediction/*
